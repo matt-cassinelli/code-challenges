@@ -17,9 +17,9 @@ namespace CodeChallenges
 
         [TestCase("It's hotter than the sun!!",                            "50")]
         [TestCase("Help yourself to a honeycomb Yorkie for the glovebox.",  3  )]
-        public static void Test(string expected, object input)
+        public static void Test(string expectedOutput, object input)
         {
-            Assert.AreEqual(expected, Solve(input));
+            Assert.AreEqual(expectedOutput, Solve(input));
         }
     }
 }

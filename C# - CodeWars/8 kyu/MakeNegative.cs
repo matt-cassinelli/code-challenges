@@ -38,9 +38,9 @@ namespace CodeChallenges
         }
 
         [TestCase(-42, 42)]
-        public static void Test(int expected, int input)
+        public static void Test(int expectedOutput, int input)
         {
-            Assert.AreEqual(expected, Solve(input));
+            Assert.AreEqual(expectedOutput, Solve(input));
         }
     }
 }

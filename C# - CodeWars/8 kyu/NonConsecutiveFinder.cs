@@ -26,9 +26,9 @@ namespace CodeChallenges
         }
 
         [TestCase(6, new int[] {1, 2, 3, 4, 6, 7, 8})]
-        public static void Test(int expected, int[] input)
+        public static void Test(int expectedOutput, int[] input)
         {
-            Assert.AreEqual(expected, Solve(input));
+            Assert.AreEqual(expectedOutput, Solve(input));
         }
     }
 }

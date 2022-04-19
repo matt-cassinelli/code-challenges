@@ -37,9 +37,9 @@ namespace CodeChallenges
         [TestCase("hello world",                     new string[] {"hello", "world"})]
         [TestCase("hello amazing world",             new string[] {"hello", "amazing", "world"})]
         [TestCase("",                                new string[] {""})]
-        public void Test(string expected, string[] input)
+        public void Test(string expectedOutput, string[] input)
         {
-            Assert.AreEqual(expected, Solve(input));
+            Assert.AreEqual(expectedOutput, Solve(input));
         }
     }
 }
