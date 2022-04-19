@@ -22,9 +22,9 @@ namespace CodeChallenges
 
         [TestCase("Yes", true)]
         [TestCase("No",  false)]
-        public static void Test(string expected, bool input)
+        public static void Test(string expectedOutput, bool input)
         {
-            Assert.AreEqual(expected, Solve(input));
+            Assert.AreEqual(expectedOutput, Solve(input));
         }
     }
 }

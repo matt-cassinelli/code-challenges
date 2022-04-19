@@ -35,9 +35,9 @@ namespace CodeChallenges
         }
 
         [TestCase(5, "abracadabra")]
-        public static void Test(int expected, string input)
+        public static void Test(int expectedOutput, string input)
         {
-            Assert.AreEqual(expected, Solve(input));
+            Assert.AreEqual(expectedOutput, Solve(input));
         }
     }
 }

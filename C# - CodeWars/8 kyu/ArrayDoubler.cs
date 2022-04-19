@@ -23,9 +23,9 @@ namespace CodeChallenges
         [TestCase(new [] { 2, 4, 6 },           new [] { 1, 2, 3 })]
         [TestCase(new [] { 8, 2, 2, 2, 8 },     new [] { 4, 1, 1, 1, 4 })]
         [TestCase(new [] { 4, 4, 4, 4, 4, 4 },  new [] { 2, 2, 2, 2, 2, 2 })]
-        public static void Test(int[]expected, int[] input)
+        public static void Test(int[]expectedOutput, int[] input)
         {
-            Assert.AreEqual(expected, Solve(input));
+            Assert.AreEqual(expectedOutput, Solve(input));
         }
 
     }

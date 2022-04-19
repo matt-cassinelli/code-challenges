@@ -36,9 +36,9 @@ namespace CodeChallenges
         [TestCase(new[] {8, -50},  new[] {0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14}     )]
         //[TestCase(new int[],       null                                                          )] // Todo: Solve this.
         //[TestCase(new int[],       new int[] {}                                                  )] // Todo: Solve this.
-        public void Test(int[] expected, int[] input)
+        public void Test(int[] expectedOutput, int[] input)
         {
-            Assert.AreEqual(expected, Solve(input));
+            Assert.AreEqual(expectedOutput, Solve(input));
         }
     }
 }
