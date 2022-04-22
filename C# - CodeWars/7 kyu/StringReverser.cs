@@ -1,7 +1,5 @@
 /* -Reversed Strings-
 Complete the solution so that it reverses the string passed into it.
-'world'  =>  'dlrow'
-'word'   =>  'drow'
 */
 
 using System;
@@ -18,6 +16,7 @@ namespace CodeChallenges
             return new String(charArray);
         }
 
+        [TestCase("drow" , "word")]
         [TestCase("dlrow", "world")]
         public static void Test(string expectedOutput, string input)
         {

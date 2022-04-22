@@ -10,20 +10,22 @@ namespace CodeWars
 {
     public class Multiplier
     {
-        static int[] Solve(int[] NumberArray)
+        static int Solve(int[] input)
         {
-            for (int i = 0; i < NumberArray.Length; i++)
+            int output = 1;
+
+            for (int i = 0; i < input.Length; i++)
             {
-                NumberArray[i] = NumberArray[i] * 2;
+                output = input[i] * output;
             }
 
-            return NumberArray;
+            return output;
         }
 
-        [TestCase(new[] { 2, 4, 6 }, new[] { 1, 2, 3 })]
-        [TestCase(new[] { 8, 2, 2, 2, 8 }, new[] { 4, 1, 1, 1, 4 })]
-        [TestCase(new[] { 4, 4, 4, 4, 4, 4 }, new[] { 2, 2, 2, 2, 2, 2 })]
-        public void Test(int[] expectedOutput, int[] input)
+        [TestCase(6, new[] { 1, 2, 3 })]
+        [TestCase(16, new [] { 4, 1, 1, 1, 4 })]
+        [TestCase(64, new [] { 2, 2, 2, 2, 2, 2 })]
+        public void Test(int expectedOutput, int[] input)
         {
             Assert.AreEqual(expectedOutput, Solve(input));
         }

@@ -12,30 +12,26 @@ namespace CodeChallenges
 {
     public class Challenge
     {
-        static int[] Solve(int[] NumberArray)
+        static int[] Solve(int[] input)
         {
-            Int32 NegativeSum   = 0;
-            Int32 PositiveCount = 0;
+            if (input == null || input.Length == 0) {return new int[] {};} // Handle the null scenario.
 
-            foreach (Int32 Number in NumberArray)
+            int negativeSum   = 0;
+            int positiveCount = 0;
+
+            foreach (int number in input)
             {
-                if (Number < 0)
-                {
-                    NegativeSum += Number;
-                }
-                if (Number > 0)
-                {
-                    PositiveCount += 1;
-                }
+                if (number < 0) {negativeSum   += number;}
+                if (number > 0) {positiveCount += 1;}
             }
 
-            return new Int32[] {PositiveCount, NegativeSum}; // Arrays must be initialised with "new"
+            return new int[] {positiveCount, negativeSum}; // Arrays must be initialised with "new"
         }
         
         [TestCase(new[] {10, -65}, new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15})]
-        [TestCase(new[] {8, -50},  new[] {0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14}     )]
-        //[TestCase(new int[],       null                                                          )] // Todo: Solve this.
-        //[TestCase(new int[],       new int[] {}                                                  )] // Todo: Solve this.
+        [TestCase(new[] {8 , -50}, new[] {0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14}     )]
+        [TestCase(new int[] {}   , null                                                          )]
+        [TestCase(new int[] {}   , new int[] {}                                                  )]
         public void Test(int[] expectedOutput, int[] input)
         {
             Assert.AreEqual(expectedOutput, Solve(input));

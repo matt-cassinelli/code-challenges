@@ -15,7 +15,7 @@ namespace CodeChallenges
     {
         static object Solve(int[] arr)
         {
-            for (int i = 1; i < arr.Length; i++) // We start on 1 instead of 0 to avoid index out of bounds error.
+            for (int i = 1; i < arr.Length; i++) // Start on 1, not 0, to avoid index out of bounds error.
             {
                 if (arr[i] != arr[i-1] + 1) {
                     return arr[i];

@@ -10,20 +10,20 @@ namespace CodeChallenges
 {
     public class ArrayDoubler
     {
-        static Int32[] Solve(Int32[] NumberArray)
+        static int[] Solve(int[] input)
         {
-            for (int i = 0; i < NumberArray.Length; i++)
+            for (int i = 0; i < input.Length; i++)
             {
-                NumberArray[i] = NumberArray[i] * 2;
+                input[i] = input[i] * 2;
             }
 
-            return NumberArray;
+            return input;
         }
 
         [TestCase(new [] { 2, 4, 6 },           new [] { 1, 2, 3 })]
         [TestCase(new [] { 8, 2, 2, 2, 8 },     new [] { 4, 1, 1, 1, 4 })]
         [TestCase(new [] { 4, 4, 4, 4, 4, 4 },  new [] { 2, 2, 2, 2, 2, 2 })]
-        public static void Test(int[]expectedOutput, int[] input)
+        public static void Test(int[] expectedOutput, int[] input)
         {
             Assert.AreEqual(expectedOutput, Solve(input));
         }

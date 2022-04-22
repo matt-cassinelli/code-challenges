@@ -1,6 +1,5 @@
 /* -Vowel Count-
-Return the number (count) of vowels in the given string.
-We will consider a, e, i, o, u as vowels for this Kata (but not y).
+Return the number of vowels in the given string.
 The input string will only consist of lower case letters and/or spaces.
 */
 
@@ -13,12 +12,12 @@ namespace CodeChallenges
 {
     public class VowelCounter
     {
-        static int Solve(string str)
+        static int Solve(string input)
         {
             char[] vowels = {'a', 'e', 'i', 'o', 'u'};
             int vowelCount = 0;
 
-            foreach (char c in str)
+            foreach (char c in input)
             {
                 if (vowels.Contains(c))
                 {
@@ -29,9 +28,9 @@ namespace CodeChallenges
             return vowelCount;
         }
 
-        static int SolveV2(string str)
+        static int SolveV2(string input)
         {
-            return (Regex.Matches(str, @"[aeiouAEIOU]")).Count;
+            return (Regex.Matches(input, @"[aeiouAEIOU]")).Count;
         }
 
         [TestCase(5, "abracadabra")]

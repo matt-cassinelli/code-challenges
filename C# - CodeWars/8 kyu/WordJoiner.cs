@@ -16,13 +16,13 @@ namespace CodeChallenges
 
             for (int i = 0; i < words.Length; i++)
             {
-                if(i == 0) // first word
+                if(i == 0) // First word
                 {
                     sentence = words[i];
                 }
-                else // any other word
+                else // Subsequent words.
                 {
-                    sentence = sentence + " " + words[i]; // append with space
+                    sentence = sentence + " " + words[i];
                 }
             }
             
@@ -33,7 +33,7 @@ namespace CodeChallenges
             return String.Join(" ", words);
         }
         
-        [TestCase("hello",                           new string[] {"hello"})] // Arrays must be initialised with "new"
+        [TestCase("hello",                           new string[] {"hello"})]
         [TestCase("hello world",                     new string[] {"hello", "world"})]
         [TestCase("hello amazing world",             new string[] {"hello", "amazing", "world"})]
         [TestCase("",                                new string[] {""})]
