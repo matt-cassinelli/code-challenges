@@ -11,7 +11,7 @@ namespace CodeChallenges;
 
 public class NumberSorter
 {
-    static int[] BubbleSort(int[] input) // Worst-case complexity: n^2
+    static int[] BubbleSort(int[] input) // Complexity: n^2
     {
         if (input == null) {return new int[] {};} // Needed to handle the null scenario.
         var output = input;
@@ -37,62 +37,61 @@ public class NumberSorter
         return output;
     }
 
-    static int[] MergeSort(int[] input) // Todo. Worst-case complexity: nlogn
+    static int[] MergeSort(int[] input) // TODO. Complexity: nlogn
     {
         var output = input;
         return output;
     }
 
-    static int[] InsertionSort(int[] input) // Todo.
+    static int[] InsertionSort(int[] input) // TODO.
     {
         var output = input;
         return output;
     }
 
-    static int[] HeapSort(int[] input) // Todo.
+    static int[] HeapSort(int[] input) // TODO.
     {
         var output = input;
         return output;
     }
 
-    static int[] QuickSort(int[] input) // Todo.
+    static int[] QuickSort(int[] input) // TODO.
     {
         var output = input;
         return output;
     }
 
-    static int[] CountingSort(int[] input) // Todo.
+    static int[] CountingSort(int[] input) // TODO.
     {
         var output = input;
         return output;
     }
 
-    static int[] RadixSort(int[] input) // Todo.
+    static int[] RadixSort(int[] input) // TODO.
     {
         var output = input;
         return output;
     }
 
-    static int[] BucketSort(int[] input) // Todo.
+    static int[] BucketSort(int[] input) // TODO.
     {
         var output = input;
         return output;
     }
 
-    static int[] CombSort(int[] input) // Todo.
+    static int[] CombSort(int[] input) // TODO.
     {
         var output = input;
         return output;
     }
 
-    static int[] ShellSort(int[] input) // Todo.
+    static int[] ShellSort(int[] input) // TODO.
     {
         var output = input;
         return output;
     }
 
-
-    static int[] Solve(int[] input)
+    static int[] BuiltInSort(int[] input)
     {
         if(input == null)
         input = new int[0];
