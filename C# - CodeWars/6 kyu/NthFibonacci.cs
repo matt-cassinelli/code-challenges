@@ -1,5 +1,6 @@
-/* -Fibonacci-
-Create function fib that returns n'th element of Fibonacci sequence (classic programming task).
+/* -N-th Fibonacci-
+Create a function that returns n'th element of Fibonacci sequence (classic programming task).
+For reference, the first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two.
 */
 
 using System;
@@ -7,7 +8,7 @@ using NUnit.Framework;
 
 namespace CodeChallenges
 {
-    public class Fibonacci
+    public class NthFibonacci
     {
         static int Solve(int n)
         {
