@@ -15,30 +15,28 @@ Along with opening (() and closing ()) parenthesis, input may contain any valid 
 
 using System;
 using NUnit.Framework;
+namespace CodeChallenges;
 
-namespace CodeChallenges
+public class BracketValidator
 {
-    public class BracketValidator
+    static bool Solve(string input)
     {
-        static bool Solve(string input)
+        var nestLevel = 0;
+        foreach (var character in input)
         {
-            var nestLevel = 0;
-            foreach (var character in input)
-            {
-                if (character == '(') {nestLevel++;}
-                if (character == ')') {nestLevel--;}
-                if (nestLevel < 0) {return false;}
-            }
-            return (nestLevel == 0);
+            if (character == '(') {nestLevel++;}
+            if (character == ')') {nestLevel--;}
+            if (nestLevel < 0) {return false;}
         }
+        return (nestLevel == 0);
+    }
 
-        [TestCase(true , "()")]
-        [TestCase(false, ")(()))")]
-        [TestCase(false, "(")]
-        [TestCase(true , "(())((()())())")]
-        public static void Test(bool expectedOutput, string input)
-        {
-            Assert.AreEqual(expectedOutput, Solve(input));
-        }
+    [TestCase(true , "()")]
+    [TestCase(false, ")(()))")]
+    [TestCase(false, "(")]
+    [TestCase(true , "(())((()())())")]
+    public static void Test(bool expectedOutput, string input)
+    {
+        Assert.AreEqual(expectedOutput, Solve(input));
     }
 }

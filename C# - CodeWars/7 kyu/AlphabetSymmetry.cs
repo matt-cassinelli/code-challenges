@@ -9,43 +9,41 @@ Input will consist of alphabet characters, both uppercase and lowercase. No spac
 using System;
 using NUnit.Framework;
 using System.Collections.Generic; // Needed for List
+namespace CodeChallenges;
 
-namespace CodeChallenges
+public class AlphabetSymmetry
 {
-    public class AlphabetSymmetry
+
+    static List<int> Solve(List<string> input)
     {
+        char[] alphabetArray = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+        var output = new List<int>();
 
-        static List<int> Solve(List<string> input)
+        foreach (string word in input)
         {
-            char[] alphabetArray = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
-            var output = new List<int>();
+            char[] charArray = word.ToLower().ToCharArray(); // Make case-insensitive
+            int matches = 0;
 
-            foreach (string word in input)
+            for (int i = 0; i < charArray.Length; i++)
             {
-                char[] charArray = word.ToLower().ToCharArray(); // Make case-insensitive
-                int matches = 0;
-
-                for (int i = 0; i < charArray.Length; i++)
+                if (charArray[i] == alphabetArray[i])
                 {
-                    if (charArray[i] == alphabetArray[i])
-                    {
-                        matches++;
-                    } 
-                }
-
-                output.Add(matches);
+                    matches++;
+                } 
             }
 
-            return output;
+            output.Add(matches);
         }
 
-        [Test]
-        public static void Test()
-        {
-            Assert.AreEqual( new List<int> {4, 3, 1}   , Solve( new List<string> {"abode", "ABc", "xyzD"} ));
-            Assert.AreEqual( new List<int> {4, 3, 0}   , Solve( new List<string> {"abide", "ABc", "xyz"} ));
-            Assert.AreEqual( new List<int> {6, 5, 7}   , Solve( new List<string> {"IAMDEFANDJKL", "thedefgh", "xyzDEFghijabc"} ));
-            Assert.AreEqual( new List<int> {1, 3, 1, 3}, Solve( new List<string> {"encode", "abc", "xyzD", "ABmD"} ));
-        }
+        return output;
+    }
+
+    [Test]
+    public static void Test()
+    {
+        Assert.AreEqual( new List<int> {4, 3, 1}   , Solve( new List<string> {"abode", "ABc", "xyzD"} ));
+        Assert.AreEqual( new List<int> {4, 3, 0}   , Solve( new List<string> {"abide", "ABc", "xyz"} ));
+        Assert.AreEqual( new List<int> {6, 5, 7}   , Solve( new List<string> {"IAMDEFANDJKL", "thedefgh", "xyzDEFghijabc"} ));
+        Assert.AreEqual( new List<int> {1, 3, 1, 3}, Solve( new List<string> {"encode", "abc", "xyzD", "ABmD"} ));
     }
 }

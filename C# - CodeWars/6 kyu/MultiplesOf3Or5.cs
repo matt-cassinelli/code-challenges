@@ -8,35 +8,33 @@ Courtesy of projecteuler.net
 using System;
 using NUnit.Framework;
 using System.Linq; // Needed for 2nd solution
+namespace CodeChallenges;
 
-namespace CodeChallenges
+public class MultiplesOf3Or5
 {
-    public class MultiplesOf3Or5
+    static int Solve(int input)
     {
-        static int Solve(int input)
+        int output = 0;
+        for (int i = 0; i < input; i++)
         {
-            int output = 0;
-            for (int i = 0; i < input; i++)
+            if (i % 3 == 0 || i % 5 == 0)
             {
-                if (i % 3 == 0 || i % 5 == 0)
-                {
-                    output += i;
-                }
+                output += i;
             }
-            return output;
         }
+        return output;
+    }
 
-        static int SolveV2(int input)
-        {
-            return Enumerable.Range(0, input)
-                             .Where(x => x % 3 == 0 || x % 5 == 0)
-                             .Sum();
-        }
+    static int SolveV2(int input)
+    {
+        return Enumerable.Range(0, input)
+                            .Where(x => x % 3 == 0 || x % 5 == 0)
+                            .Sum();
+    }
 
-        [TestCase(23, 10)]
-        public static void Test(int expectedOutput, int input)
-        {
-            Assert.AreEqual(expectedOutput, Solve(input));
-        }
+    [TestCase(23, 10)]
+    public static void Test(int expectedOutput, int input)
+    {
+        Assert.AreEqual(expectedOutput, Solve(input));
     }
 }

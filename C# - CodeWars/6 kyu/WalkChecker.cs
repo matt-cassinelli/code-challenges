@@ -10,7 +10,6 @@ Note: you will always receive a valid array containing a random assortment of di
 
 using System;
 using NUnit.Framework;
-
 namespace CodeChallenges;
 
 public class WalkChecker

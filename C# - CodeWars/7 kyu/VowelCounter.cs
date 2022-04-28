@@ -7,36 +7,34 @@ using System;
 using NUnit.Framework;
 using System.Linq; // needed for .Contains()
 using System.Text.RegularExpressions; // needed for 2nd solution
+namespace CodeChallenges;
 
-namespace CodeChallenges
+public class VowelCounter
 {
-    public class VowelCounter
+    static int Solve(string input)
     {
-        static int Solve(string input)
-        {
-            char[] vowels = {'a', 'e', 'i', 'o', 'u'};
-            int vowelCount = 0;
+        char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+        int vowelCount = 0;
 
-            foreach (char c in input)
+        foreach (char c in input)
+        {
+            if (vowels.Contains(c))
             {
-                if (vowels.Contains(c))
-                {
-                    vowelCount++;
-                }
+                vowelCount++;
             }
-
-            return vowelCount;
         }
 
-        static int SolveV2(string input)
-        {
-            return (Regex.Matches(input, @"[aeiouAEIOU]")).Count;
-        }
+        return vowelCount;
+    }
 
-        [TestCase(5, "abracadabra")]
-        public static void Test(int expectedOutput, string input)
-        {
-            Assert.AreEqual(expectedOutput, Solve(input));
-        }
+    static int SolveV2(string input)
+    {
+        return (Regex.Matches(input, @"[aeiouAEIOU]")).Count;
+    }
+
+    [TestCase(5, "abracadabra")]
+    public static void Test(int expectedOutput, string input)
+    {
+        Assert.AreEqual(expectedOutput, Solve(input));
     }
 }

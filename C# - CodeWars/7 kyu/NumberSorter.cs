@@ -6,7 +6,6 @@ If the function passes in an empty array or null then it should return an empty 
 using System;
 using NUnit.Framework;
 using System.Collections;
-
 namespace CodeChallenges;
 
 public class NumberSorter

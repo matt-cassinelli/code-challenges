@@ -5,41 +5,39 @@ Be careful, there shouldn't be a space at the beginning or the end of the senten
 
 using System;
 using NUnit.Framework;
+namespace CodeChallenges;
 
-namespace CodeChallenges
+public class WordJoiner
 {
-    public class WordJoiner
+    static string Solve(string[] words)
     {
-        static string Solve(string[] words)
+        String sentence = "";
+
+        for (int i = 0; i < words.Length; i++)
         {
-            String sentence = "";
-
-            for (int i = 0; i < words.Length; i++)
+            if(i == 0) // First word
             {
-                if(i == 0) // First word
-                {
-                    sentence = words[i];
-                }
-                else // Subsequent words.
-                {
-                    sentence = sentence + " " + words[i];
-                }
+                sentence = words[i];
             }
-            
-            return sentence;
-        }
-
-        static string SolveV2(string[] words) {
-            return String.Join(" ", words);
+            else // Subsequent words.
+            {
+                sentence = sentence + " " + words[i];
+            }
         }
         
-        [TestCase("hello",                           new string[] {"hello"})]
-        [TestCase("hello world",                     new string[] {"hello", "world"})]
-        [TestCase("hello amazing world",             new string[] {"hello", "amazing", "world"})]
-        [TestCase("",                                new string[] {""})]
-        public void Test(string expectedOutput, string[] input)
-        {
-            Assert.AreEqual(expectedOutput, Solve(input));
-        }
+        return sentence;
+    }
+
+    static string SolveV2(string[] words) {
+        return String.Join(" ", words);
+    }
+    
+    [TestCase("hello",                           new string[] {"hello"})]
+    [TestCase("hello world",                     new string[] {"hello", "world"})]
+    [TestCase("hello amazing world",             new string[] {"hello", "amazing", "world"})]
+    [TestCase("",                                new string[] {""})]
+    public void Test(string expectedOutput, string[] input)
+    {
+        Assert.AreEqual(expectedOutput, Solve(input));
     }
 }

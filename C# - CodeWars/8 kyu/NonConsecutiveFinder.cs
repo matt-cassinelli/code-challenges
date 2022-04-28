@@ -8,27 +8,25 @@ The array will always have at least 2 elements and all elements will be numbers.
 
 using System;
 using NUnit.Framework;
+namespace CodeChallenges;
 
-namespace CodeChallenges
+public class NonConsecutiveFinder
 {
-    public class NonConsecutiveFinder
+    static object Solve(int[] arr)
     {
-        static object Solve(int[] arr)
+        for (int i = 1; i < arr.Length; i++) // Start on 1 rather than 0 to avoid 'index out of bounds' error.
         {
-            for (int i = 1; i < arr.Length; i++) // Start on 1, not 0, to avoid index out of bounds error.
-            {
-                if (arr[i] != arr[i-1] + 1) {
-                    return arr[i];
-                }
+            if (arr[i] != arr[i-1] + 1) { // If this element isn't equal to the last element plus one,
+                return arr[i]; // Return this element.
             }
-
-            return null;
         }
 
-        [TestCase(6, new int[] {1, 2, 3, 4, 6, 7, 8})]
-        public static void Test(int expectedOutput, int[] input)
-        {
-            Assert.AreEqual(expectedOutput, Solve(input));
-        }
+        return null; // Else return null.
+    }
+
+    [TestCase(6, new int[] {1, 2, 3, 4, 6, 7, 8})]
+    public static void Test(int expectedOutput, int[] input)
+    {
+        Assert.AreEqual(expectedOutput, Solve(input));
     }
 }

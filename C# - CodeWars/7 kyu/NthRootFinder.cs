@@ -13,24 +13,22 @@ Notes:
 
 using System;
 using NUnit.Framework;
+namespace CodeChallenges;
 
-namespace CodeChallenges
+public class NthRootFinder
 {
-    public class NthRootFinder
+    static double Solve(double input, int n)
     {
-        static double Solve(double input, int n)
-        {
-            return Math.Pow(input, 1.0 / n);
-        }
+        return Math.Pow(input, 1.0 / n);
+    }
 
-        [TestCase(2  , 4   , 2)]
-        [TestCase(2  , 8   , 3)]
-        [TestCase(4  , 256 , 4)]
-        [TestCase(3  , 9   , 2)]
-        [TestCase(2.5, 6.25, 2)]
-        public static void Test(double expectedOutput, double input, int n)
-        {
-            Assert.AreEqual(expectedOutput, Solve(input, n), 1e-9); // The final parameter sets how far off the output can be.
-        }
+    [TestCase(2  , 4   , 2)]
+    [TestCase(2  , 8   , 3)]
+    [TestCase(4  , 256 , 4)]
+    [TestCase(3  , 9   , 2)]
+    [TestCase(2.5, 6.25, 2)]
+    public static void Test(double expectedOutput, double input, int n)
+    {
+        Assert.AreEqual(expectedOutput, Solve(input, n), 1e-9); // The final parameter sets how far off the output can be.
     }
 }

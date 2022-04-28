@@ -13,38 +13,36 @@ Output string must be two numbers separated by a single space, and highest numbe
 using System;
 using NUnit.Framework;
 using System.Linq; // Needed for .Select()
+namespace CodeChallenges;
 
-namespace CodeChallenges
+public class GetHighestAndLowest
 {
-    public class GetHighestAndLowest
+    static string Solve(string input)
     {
-        static string Solve(string input)
-        {
-            var highest = int.MinValue;
-            var lowest = int.MaxValue;
-            var numbers = input.Split(" ").Select(int.Parse);
+        var highest = int.MinValue;
+        var lowest = int.MaxValue;
+        var numbers = input.Split(" ").Select(int.Parse);
 
-            foreach (int number in numbers)
+        foreach (int number in numbers)
+        {
+            if (number > highest)
             {
-                if (number > highest)
-                {
-                    highest = number;
-                }
-                
-                if (number < lowest)
-                {
-                    lowest = number;
-                }
+                highest = number;
             }
-
-            return string.Format("{0} {1}", highest, lowest);
+            
+            if (number < lowest)
+            {
+                lowest = number;
+            }
         }
 
-        [TestCase("42 -9", "8 3 -5 42 -1 0 0 -9 4 7 4 -4")]
-        [TestCase("3 1"  , "1 2 3")]
-        public static void Test(string expectedOutput, string input)
-        {
-            Assert.AreEqual(expectedOutput, Solve(input));
-        }
+        return string.Format("{0} {1}", highest, lowest);
+    }
+
+    [TestCase("42 -9", "8 3 -5 42 -1 0 0 -9 4 7 4 -4")]
+    [TestCase("3 1"  , "1 2 3")]
+    public static void Test(string expectedOutput, string input)
+    {
+        Assert.AreEqual(expectedOutput, Solve(input));
     }
 }
