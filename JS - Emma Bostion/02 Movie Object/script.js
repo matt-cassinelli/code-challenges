@@ -21,13 +21,15 @@ class Movie {
   }
 }
 
-const TimeBanditsMovie = new Movie( "Time Bandits", "Terry Gilliam",  "Fantasy", 1981, 96);
-const TotalRecallMovie = new Movie( "Total Recall", "Paul Verhoeven", "Action",  1990, 67);
-const IdiocracyMovie   = new Movie( "Idiocracy",    "Mike Judge",     "Comedy",  2006, 81);
-
 // How JS Inheritance works:
 // Each object has a private property called "prototype" which holds a link to another object.
 // This referenced object has a prototype of its own, and so on until an object is reached with null as its prototype.
+
+// Tests //
+
+const TimeBanditsMovie = new Movie( "Time Bandits", "Terry Gilliam",  "Fantasy", 1981, 96);
+const TotalRecallMovie = new Movie( "Total Recall", "Paul Verhoeven", "Action",  1990, 67);
+const IdiocracyMovie   = new Movie( "Idiocracy",    "Mike Judge",     "Comedy",  2006, 81);
 
 //console.log(TimeBanditsMovie); // To illustrate "prototype"
 console.log(TimeBanditsMovie.getOverview());

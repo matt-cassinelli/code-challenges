@@ -39,6 +39,8 @@ class Book { // It's better to have classes with encapsulated methods instead of
   }
 }
 
+// Tests //
+
 const CleanCodeBook = new Book("Clean Code", "Robert C. Martin", 9780132350884, 5);
 console.log(CleanCodeBook.availability); // Expected output - "Low stock"
 CleanCodeBook.restock(12);

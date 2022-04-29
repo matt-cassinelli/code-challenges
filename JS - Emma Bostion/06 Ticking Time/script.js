@@ -11,7 +11,7 @@ function updateClock(clockNode) {
   clockNode.textContent = currentDateTime.toLocaleTimeString();
 }
 
-const myClockNode = document.querySelector("#clock"); // Find DOM element by ID.
+const myClockElement = document.querySelector("#clock"); // Find DOM element by ID.
 
 // setInterval calls a function (1st arg) every x milliseconds (2nd arg). It continues until a clearInterval().
-setInterval(() => {updateClock(myClockNode)}, 1000);
+setInterval(() => {updateClock(myClockElement)}, 1000);

@@ -16,4 +16,5 @@ const user = {
   age: 26,
 };
 
+// Tests //
 console.log(user.username); // Expected output: undefined

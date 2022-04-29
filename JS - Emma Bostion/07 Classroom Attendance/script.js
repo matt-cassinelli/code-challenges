@@ -14,7 +14,7 @@ Requirements
 */
 
 function getStudents(classroom) {
-  const {hasTeachingAssistant, classList} = classroom; // Get classList from classroom. (Destructuring properties from an object)
+  const {hasTeachingAssistant, classList} = classroom; // Get people from classroom (Destructuring properties from an object)
   let teacher, teachingAssitant, students;
 
   if (hasTeachingAssistant) {
@@ -24,6 +24,8 @@ function getStudents(classroom) {
   }
   return students;
 }
+
+// Tests //
 
 console.log(
   getStudents({

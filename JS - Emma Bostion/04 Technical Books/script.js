@@ -50,6 +50,7 @@ class TechnicalBook extends Book { // "extends" means that this class is a child
   }
 }
 
+// Tests //
 const CleanCodeBook = new TechnicalBook("Clean Code", "Robert C. Martin", 9780132350884, 5, 2);
 console.log(CleanCodeBook.availability); // Expected output: "Low stock"
 console.log(CleanCodeBook.getEdition()); // Expected output: "The current version of this book is 2"

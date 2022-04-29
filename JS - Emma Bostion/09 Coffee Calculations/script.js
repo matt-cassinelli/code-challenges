@@ -11,9 +11,10 @@ Requirements:
 
 function calculateTotal(myArray) {
   let total = myArray.reduce( // The reduce method runs a function once for each item in an array and returns a single value.
-    (prev, current) => (prev += current)
+    (total, current) => (total += current)
   );
   return `The total bill is £${total * 1.25}`;
 }
 
+// Tests //
 console.log(calculateTotal([2, 5, 7, 1, 4]));

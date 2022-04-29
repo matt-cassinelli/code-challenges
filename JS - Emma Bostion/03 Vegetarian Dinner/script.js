@@ -23,14 +23,14 @@ const menu = [
   , {name:"Filet mignon"    , isVegetarian:false}
 ];
 
-const menuNode = document.querySelector("#menu"); // Find the HTML list element by ID.
+const menuElement = document.querySelector("#menu"); // Find the HTML list element by ID.
 
 const filteredMenu = menu.filter( // .filter() returns array items that pass the tests we provide.
   (meal) => meal.isVegetarian === true
 );
 
 filteredMenu.forEach((meal) => {
-  let mealListItem = document.createElement("li"); // Create list item.
+  let mealListItemElement = document.createElement("li"); // Create list item.
   mealListItem.textContent = meal.name; // Set its text.
-  menuNode.appendChild(mealListItem); // Add to the list.
+  menuElement.appendChild(mealListItemElement); // Add to the list.
 });
