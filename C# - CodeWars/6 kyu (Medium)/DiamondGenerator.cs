@@ -47,7 +47,6 @@ public class DiamondGenerator
 [TestFixture]
 public class DiamondGeneratorTests
 {
-	
 	[Test]
 	public void TestNull()
 	{
@@ -63,6 +62,7 @@ public class DiamondGeneratorTests
 		expected.Append("*\n");
 		Assert.AreEqual(expected.ToString(), DiamondGenerator.Solve(1));
 	}
+	
 	[Test]
 	public void TestDiamond3()
 	{
