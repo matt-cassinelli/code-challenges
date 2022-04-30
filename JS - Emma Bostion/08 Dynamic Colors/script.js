@@ -6,21 +6,21 @@ Requirements:
 - Use closures
 */
 
-function changeColor(color) {
-  return function () { // Return a function.
+function makeColourChanger(color) {
+  return function () { // Return another function
     document.body.style.background = color;
   };
 }
 
-const bgColorBlue = changeColor("#0f62fe");
-const bgColorPink = changeColor("#ff7eb6");
-const bgColorGreen = changeColor("#42be65");
+// In JS, all functions have access to the scope above them -- a nested function can reference data from its parent function.
+// What's quirky is that this data is still available even after the parent function has completed and returned. This is called a closure.
 
-document.querySelector("#blue").addEventListener("click", bgColorBlue);
-document.querySelector("#pink").addEventListener("click", bgColorPink);
-document.querySelector("#green").addEventListener("click", bgColorGreen);
+const changeColourBlue = makeColourChanger("#0f62fe");
+const changeColourPink = makeColourChanger("#ff7eb6");
+const changeColourGreen = makeColourChanger("#42be65");
 
-// In JS, all functions have access to the scope above them.
-// We can use a nested function to access data from the parent function.
-// These functions ('closures') have access to the parent scope, even after the parent function has closed.
-// This challenge is a bad illustration. Read here instead: https://www.w3schools.com/js/js_function_closures.asp
+// Even though makeColourChanger has been destroyed, the changeColourX closures still have access to the arguments that were passed in.
+document.querySelector("#blue").addEventListener("click", changeColourBlue);
+document.querySelector("#pink").addEventListener("click", changeColourPink);
+document.querySelector("#green").addEventListener("click", changeColourGreen);
+
