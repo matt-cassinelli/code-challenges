@@ -7,7 +7,7 @@ Requirements:
 */
 
 function makeColourChanger(color) {
-  return function () { // Return another function
+  return function () { // Returns another function
     document.body.style.background = color;
   };
 }
@@ -23,4 +23,3 @@ const changeColourGreen = makeColourChanger("#42be65");
 document.querySelector("#blue").addEventListener("click", changeColourBlue);
 document.querySelector("#pink").addEventListener("click", changeColourPink);
 document.querySelector("#green").addEventListener("click", changeColourGreen);
-

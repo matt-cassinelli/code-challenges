@@ -48,7 +48,7 @@ console.log(CleanCodeBook.availability); // Expected output - "In stock"
 CleanCodeBook.sell(17);
 console.log(CleanCodeBook.availability); // Expected output - "Out of stock" // TODO: Research testing frameworks.
 
-// Archive:
+// Archive //
 
 // function Book(title, author, ISBN, numCopies) {
 //   this.title = title;

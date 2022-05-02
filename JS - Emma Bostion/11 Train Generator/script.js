@@ -1,9 +1,7 @@
 /*
-Create a generator function called `getStop` which yields different stops on the trainline from Poughkeepsie to Grand Central Station.
-
+Create a generator function called "getStop" which yields different stops on a trainline.
 The stops are as follows: Poughkeepsie, Newburgh, Peekskill, Yonkers, Bronx, Grand Central
-
-You will have a button with an id of `next-stop` that, when clicked, will console log the next stop or if the end of the line has been reached will console log "We made it!"
+You will have a button with an id of "next-stop" that, when clicked, should console log the next stop or if the end of the line has been reached should console log "We made it!"
 
 Requirements:
 - Use a generator function
@@ -19,7 +17,7 @@ function* generateStops() { // Generators are declared with an asterix.
 }
 
 // Generators are functions that can be exited and re-entered whilst retaining its state, as if 'pausing' the function.
-// They can be used to achieve asyncronous programming, but async/await may be more convenient.
+// They can be used to achieve asyncronous programming, (but async/await may be more convenient).
 
 const myStopGenerator = generateStops(); // When a generator function is called, it does not execute its code. Instead it returns an object that you can call .next() on.
 

@@ -11,7 +11,7 @@ const menu = [
 ];
 
 Requirements:
-- Use the `array.filter()` method to differentiate dishes which are vegetarian
+- Use the "array.filter()" method to differentiate dishes which are vegetarian
 - Dynamically generate each DOM node for the vegetarian dishes to append it as a list item to an unordered list
 */
 
