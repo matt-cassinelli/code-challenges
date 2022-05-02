@@ -5,11 +5,14 @@ Requirements:
 - Use recursion
 */
 
-// Use recursion to calculate a factorial. n! = n * n-1 * n-2 * n-3 ... * 2 * 1
+
 function getLetterCombinationCount(letters) {
-  //console.log(letters.length);
-  if (letters.length === 1) {return 1;} // Stop when there's only 1 letter remaining. A 'base case' like this is needed to prevent an infinite loop.
-  return letters.length * getLetterCombinationCount(letters.substring(1)); // If there is more than 1 letter left, multiply self * (self - 1 letter).
+  function recurse(letterCount) { // Use recursion to calculate a factorial (n * n-1 * n-2 * n-3 ... * 2 * 1).
+    if (letterCount === 1) {return 1;} // If there is only 1 letter left then stop. A 'base case' like this is needed to prevent an infinite loop.
+    return letterCount * recurse(letterCount - 1); // If there is more than 1 letter left, multiply self * (self - 1 letter).
+  }
+
+  return recurse(letters.length);
 }
 
 // Tests //
