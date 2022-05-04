@@ -5,7 +5,6 @@ Requirements:
 - Use recursion
 */
 
-
 function getLetterCombinationCount(letters) {
   function recurse(letterCount) { // Use recursion to calculate a factorial (n * n-1 * n-2 * n-3 ... * 2 * 1).
     if (letterCount === 1) {return 1;} // If there is only 1 letter left then stop. A 'base case' like this is needed to prevent an infinite loop.
