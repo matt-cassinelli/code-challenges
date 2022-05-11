@@ -9,9 +9,9 @@ Requirements:
 
 function urlify(blogTitle) {
   return blogTitle.toLowerCase()
-    .replace(/[.,/#!$%^&*;:{}=!\-_`~()'"]/g, "") // "g" in the regex literal means that all occurences will be matched instead of just the first one.
+    .replace(/[.,/#!$%^&*;:{}=!\-_`~()'"]/g, "") // "g" in a regex literal means that all occurences will be matched, not just the first one.
     .trim()
-    .replaceAll(" ", "-"); // This comes after the first replace method so that spaces are preserved
+    .replaceAll(" ", "-"); // This is placed after the first replace method so that spaces are preserved.
 }
 
 console.log(urlify("How I Got Into Programming!!!"));

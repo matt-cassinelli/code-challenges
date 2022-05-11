@@ -8,15 +8,13 @@ All letters will be lowercase and all inputs will be valid.
 
 using System;
 using NUnit.Framework;
-using System.Text;
-using System.Collections.Generic;
 namespace CodeChallenges;
 
 public class HighestScoringWord
 {
 	private static string alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-    public static string Solve(string input)
+	public static string Solve(string input)
     {
 		string[] words = input.Split(' ');
 		string winningWord = "";

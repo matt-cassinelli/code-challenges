@@ -10,12 +10,12 @@ Requirements:
 
 function validatePassword(password) {
 
-  var patterns = [ // Create array of regex literals (surrounded by / /)
-    /(?=.+[a-z])/, // One lowercase char
-    /(?=.+[A-Z])/, // One uppercase char
-    /(?=.+[0-9])/, // One digit
+  var patterns = [ // Create array of regex literals:
+    /(?=.+[a-z])/,      // One lowercase char
+    /(?=.+[A-Z])/,      // One uppercase char
+    /(?=.+[0-9])/,      // One digit
     /(?=.+[!@#$%^&*])/, // One special char
-    /(?=.{8,})/ // Min 8 chars
+    /(?=.{8,})/         // Min 8 chars
   ];
 
   let isValid = true; // Priming

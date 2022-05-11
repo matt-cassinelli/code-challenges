@@ -2,7 +2,7 @@
 
 A place to practise problem solving, syntax, algorithms etc. Feel free to download it and scrub out the answers!
 
-For challenges with multiple solutions, I've named the methods "SolveV2", "SolveV3" etc. To test one of these solutions, rename the corresponding method inside the test.
+For challenges with multiple solutions, I've named the methods "SolveV2", "SolveV3" etc. To test one of these solutions, rename the method inside the test.
 
 ## How to run - C# 🏃
 

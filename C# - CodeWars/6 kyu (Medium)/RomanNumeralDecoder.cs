@@ -19,7 +19,6 @@ M          1,000
 
 using System;
 using NUnit.Framework;
-using System.Linq;
 using System.Collections.Generic; // Needed for dictionary
 namespace CodeChallenges;
 
@@ -45,13 +44,13 @@ public class RomanNumeralDecoder
             output += numerals[letter];
         }
 
-        if (input.Contains("IV")|| input.Contains("IX"))
+        if (input.Contains("IV") || input.Contains("IX"))
             output -= 2;
 
-        if (input.Contains("XL")|| input.Contains("XC"))
+        if (input.Contains("XL") || input.Contains("XC"))
             output -= 20;
 
-        if (input.Contains("CD")|| input.Contains("CM"))
+        if (input.Contains("CD") || input.Contains("CM"))
             output -= 200;
 
         return output;
@@ -59,15 +58,15 @@ public class RomanNumeralDecoder
 
     [TestCase(21  , "XXI")]
     [TestCase(1   , "I")]
-    [TestCase(2   ,"II")]
-    [TestCase(4   ,"IV")]
-    [TestCase(21  ,"XXI")]
-    [TestCase(500 ,"D")]
-    [TestCase(1000,"M")]
-    [TestCase(1954,"MCMLIV")]
-    [TestCase(1990,"MCMXC")]
-    [TestCase(2008,"MMVIII")]
-    [TestCase(2014,"MMXIV")]
+    [TestCase(2   , "II")]
+    [TestCase(4   , "IV")]
+    [TestCase(21  , "XXI")]
+    [TestCase(500 , "D")]
+    [TestCase(1000, "M")]
+    [TestCase(1954, "MCMLIV")]
+    [TestCase(1990, "MCMXC")]
+    [TestCase(2008, "MMVIII")]
+    [TestCase(2014, "MMXIV")]
     public static void Test(int expectedOutput, string input)
     {
         Assert.AreEqual(expectedOutput, Solve(input));
