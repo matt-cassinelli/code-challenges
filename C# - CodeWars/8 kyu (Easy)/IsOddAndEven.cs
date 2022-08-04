@@ -11,17 +11,14 @@ public class IsOddAndEven
 {
     static bool Solve(int flower1, int flower2)
     {
-        if(
-            flower1 % 2 == 0 && flower2 % 2 != 0 ||
-            flower1 % 2 != 0 && flower2 % 2 == 0
-        )
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        if (IsEven(flower1) ^ IsEven(flower2))
+        {return true;}
+        else {return false;}
+    }
+
+    static bool IsEven(int input)
+    {
+        return input % 2 == 0;
     }
 
     [Test] public void Test()

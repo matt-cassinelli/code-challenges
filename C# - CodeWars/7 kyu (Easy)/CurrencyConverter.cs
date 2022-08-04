@@ -24,8 +24,8 @@ public class CurrencyConverter
 
         for (int i = denominations.Length - 1; i >= 0; i--) // Start from the last item and move towards the first.
         {
-            output[i]     = change / denominations[i]; // The result of this division is forced to be an integer with no decimal places.
-            change        = change % denominations[i];
+            output[i] = change / denominations[i]; // The result of this division is forced to be an integer with no decimal places.
+            change    = change % denominations[i];
             //Console.WriteLine(divides + " | " + change);
         }
 

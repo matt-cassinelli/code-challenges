@@ -25,10 +25,10 @@ public class NthFibonacci
         return prev;
     }
 
-    [TestCase(5 , 5)]
-    [TestCase(55, 10)]
-    public static void Test(int expectedOutput, int input)
+    [TestCase(5 , 5 )]
+    [TestCase(10, 55)]
+    public static void Test(int input, int expectedOutput) // swapped around input and output
     {
-        Assert.AreEqual(expectedOutput, Solve(input));
+        Assert.AreEqual(Solve(input), expectedOutput);
     }
 }

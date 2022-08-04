@@ -13,7 +13,6 @@ namespace CodeChallenges;
 
 public class AlphabetSymmetry
 {
-
     static List<int> Solve(List<string> input)
     {
         char[] alphabetArray = "abcdefghijklmnopqrstuvwxyz".ToCharArray();

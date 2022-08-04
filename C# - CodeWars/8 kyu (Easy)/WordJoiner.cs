@@ -11,20 +11,19 @@ public class WordJoiner
 {
     static string Solve(string[] words)
     {
-        String sentence = "";
-
+        string sentence = "";
+        
         for (int i = 0; i < words.Length; i++)
         {
-            if(i == 0) // First word
+            if (i == 0) // First word
             {
                 sentence = words[i];
             }
-            else // Subsequent words.
+            else // Subsequent words
             {
-                sentence = sentence + " " + words[i];
+                sentence += " " + words[i];
             }
         }
-        
         return sentence;
     }
 
@@ -32,10 +31,10 @@ public class WordJoiner
         return String.Join(" ", words);
     }
     
-    [TestCase("hello",                           new string[] {"hello"})]
-    [TestCase("hello world",                     new string[] {"hello", "world"})]
-    [TestCase("hello amazing world",             new string[] {"hello", "amazing", "world"})]
-    [TestCase("",                                new string[] {""})]
+    [TestCase("hello",               new string[] {"hello"})]
+    [TestCase("hello world",         new string[] {"hello", "world"})]
+    [TestCase("hello amazing world", new string[] {"hello", "amazing", "world"})]
+    [TestCase("",                    new string[] {""})]
     public void Test(string expectedOutput, string[] input)
     {
         Assert.AreEqual(expectedOutput, Solve(input));
