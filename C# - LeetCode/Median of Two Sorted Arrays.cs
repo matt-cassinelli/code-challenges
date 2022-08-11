@@ -1,5 +1,3 @@
-namespace LeetCode.Task4;
-
 /*
 Difficulty: Hard
 
@@ -13,6 +11,8 @@ nums2.length == n  |  0 <= n <= 1000
 -106 <= nums1[i]   |  1 <= m + n <= 2000
 nums2[i] <= 106
 */
+
+namespace LeetCode.Task4;
 
 public class Solution
 {
@@ -71,11 +71,7 @@ public class Solution
         }
         return result;
     }
-}
 
-[TestFixture]
-public class Tests
-{
     [Test]
     [TestCase(new[]{1,3  }, new[]{2    }, 2.00000)]
     [TestCase(new[]{1,2  }, new[]{3,4  }, 2.50000)]
