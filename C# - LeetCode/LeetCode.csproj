@@ -16,6 +16,7 @@
   <ItemGroup>
     <Using Include="System" />
     <Using Include="System.Text" />
+    <Using Include="System.Linq" />
     <Using Include="System.Collections.Generic" />
     <Using Include="NUnit.Framework" />
     <Using Include="FluentAssertions" />

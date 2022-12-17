@@ -11,12 +11,13 @@ Constraints:
 0 <= num <= 106
 */
 
-public class Solution {
+namespace LeetCode.Task1342;
 
-    public int Solve(int input)
+static class Solution
+{
+    static int Solve(int input)
     {
         int stepCount = 0;
-
         while (input > 0)
         {
             if (input % 2 == 0) {input = input / 2;}
@@ -26,14 +27,12 @@ public class Solution {
         return stepCount;
     }
 
-    [Test]
     [TestCase(14, 6)]
     [TestCase(8, 4)]
     [TestCase(123, 12)]
-    public void Test(int input, int expectedOutput)
+    public static void Test(int input, int expectedOutput)
     {
-        var s = new Solution();
-        s.Solve(input).Should().Be(expectedOutput);
+        Solve(input).Should().Be(expectedOutput);
         // Time complexity:
         // Space complexity:
     }

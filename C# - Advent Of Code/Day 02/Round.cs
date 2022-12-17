@@ -31,6 +31,6 @@ public class Round
         YourPoints = Outcome.Points + yourMove.Points;
     }
 
-    public Outcome Outcome { get; private set; }
-    public int YourPoints { get; private set; }
+    public Outcome Outcome { get; } // set allowed only in constructor
+    public int YourPoints { get; }
 }

@@ -25,9 +25,9 @@ n == height.length
 
 namespace LeetCode.Task11;
 
-public class Solution 
+static class Solution 
 {
-    public int Solve(int[] input)
+    static int Solve(int[] input)
     {
         int winningArea = 0;
         for (int leftIndex = 0; leftIndex < input.Length; leftIndex++)
@@ -43,7 +43,7 @@ public class Solution
         return winningArea;
     }
 
-    public int SolveV2(int[] input)
+    static int SolveV2(int[] input)
     {
         int winningArea = 0;
         int leftIndex = 0;
@@ -68,18 +68,15 @@ public class Solution
         return winningArea;
     }
 
-    [Test]
     [TestCase(new [] {1,8,6,2,5,4,8,3,7}, 49)]
     [TestCase(new [] {1,1              }, 1 )]
-    public void Test(int[] input, int expectedOutput)
+    public static void Test(int[] input, int expectedOutput)
     {
-        var s = new Solution();
-        
-        //s.Solve(input).Should().Be(expectedOutput);
+        //Solve(input).Should().Be(expectedOutput);
         // Time complexity: O(n^2). Calculating area for all \dfrac{n(n-1)}{2} height pairs.
         // Space complexity: O(1)O(1). Constant extra space is used.
 
-        s.SolveV2(input).Should().Be(expectedOutput);
+        SolveV2(input).Should().Be(expectedOutput);
         // Runtime: 363 ms | Memory Usage: 46.3 MB
         //Time complexity: O(n)O(n). Single pass.
         //Space complexity: O(1)O(1). Constant space is used.

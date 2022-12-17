@@ -2,8 +2,6 @@ namespace AoC.Y2022.D02;
 
 public class Outcome
 {
-    public string Name { get; private set; } // [todo] Make type safe? Enums?
-    public int Points { get; private set; }
     public Outcome(string name)
     {
         if      (name == "Lose") {Points = 0;}
@@ -19,4 +17,7 @@ public class Outcome
         else if (cipherChar == 'Z') {Points = 6; Name = "Win";}
         else {throw new Exception($"Invalid outcome {cipherChar}");}
     }
+
+    public string Name { get; } // [todo] Make type safe? Enums?
+    public int Points { get; }
 }

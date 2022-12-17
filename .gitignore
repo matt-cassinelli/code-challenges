@@ -1,7 +1,8 @@
+*.mp4
 **/bin
 **/obj
 **/.vs
+Day XX
 *ideas.txt
 **/.vscode
 **/private
-*.mp4

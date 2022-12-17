@@ -14,16 +14,16 @@ nums2[i] <= 106
 
 namespace LeetCode.Task4;
 
-public class Solution
+static class Solution
 {
-    public double Solve(int[] nums1, int[] nums2)
+    static double Solve(int[] nums1, int[] nums2)
     {
         int[] merged = Merge(nums1, nums2);
         double median = FindMedian(merged);
         return median;
     }
 
-    double FindMedian(int[] input)
+    static double FindMedian(int[] input)
     {
         int length = input.Length;
         if (length % 2 == 0)
@@ -38,7 +38,7 @@ public class Solution
         }
     }
 
-    int[] Merge(int[] array1, int[] array2)
+    static int[] Merge(int[] array1, int[] array2)
     {
         var result = new int[array1.Length + array2.Length];
         int array1Index = 0, array2Index = 0, resultIndex = 0;
@@ -72,15 +72,13 @@ public class Solution
         return result;
     }
 
-    [Test]
     [TestCase(new[]{1,3  }, new[]{2    }, 2.00000)]
     [TestCase(new[]{1,2  }, new[]{3,4  }, 2.50000)]
     [TestCase(new[]{1,2  }, new[]{3,4,5}, 3.00000)]
     [TestCase(new[]{4,5,6}, new[]{1,2,3}, 3.50000)]
-    public void Test(int[] input1, int[] input2, double expectedOutput)
+    public static void Test(int[] input1, int[] input2, double expectedOutput)
     {
-        var s = new Solution();
-        s.Solve(input1, input2).Should().Be(expectedOutput);
+        Solve(input1, input2).Should().Be(expectedOutput);
         // Runtime: 110 ms | Memory Usage: 50.7 MB
         // Time complexity: ? | Space complexity: ?
     }
