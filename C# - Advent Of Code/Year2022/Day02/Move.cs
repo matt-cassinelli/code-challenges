@@ -1,4 +1,4 @@
-namespace AoC.Y2022.D02;
+namespace AdventOfCode.Year2022.Day02;
 
 public abstract class Move
 {

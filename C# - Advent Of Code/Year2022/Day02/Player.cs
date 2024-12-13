@@ -1,4 +1,4 @@
-namespace AoC.Y2022.D02;
+namespace AdventOfCode.Year2022.Day02;
 
 class Player
 {
@@ -6,20 +6,13 @@ class Player
     public Move Move { get; private set; }
     public void playMove(char inputCharacter)
     {
-        switch (inputCharacter)
+        Move = inputCharacter switch
         {
-            case 'A' or 'X':
-                Move = new Rock();
-                break;
-            case 'B' or 'Y':
-                Move = new Paper();
-                break;
-            case 'C' or 'Z':
-                Move = new Scissors();
-                break;
-            default:
-                throw new Exception($"Couldn't determine Move from {inputCharacter}");
-        }
+            'A' or 'X' => new Rock(),
+            'B' or 'Y' => new Paper(),
+            'C' or 'Z' => new Scissors(),
+            _ => throw new Exception($"Couldn't determine Move from {inputCharacter}"),
+        };
     }
 
     public void playMoveToMeetOutcome(Move opponentMove, Outcome outcome)

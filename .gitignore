@@ -1,8 +1,9 @@
-*.mp4
+**/.vs
+**/.vscode
 **/bin
 **/obj
-**/.vs
-Day XX
+
+*.mp4
 *ideas.txt
-**/.vscode
 **/private
+__pycache__
