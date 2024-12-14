@@ -14,7 +14,7 @@ public static class Extensions
 
     public static IList<string> SplitByNewline(this string input)
     {
-        string[] delimeters = ["\n", "\r\n"];
+        string[] delimeters = ["\n", "\r", "\r\n"];
         return input.Split(delimeters, StringSplitOptions.RemoveEmptyEntries);
     }
 
