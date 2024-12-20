@@ -1,3 +1,5 @@
+// https://www.codingame.com/training/medium/shadows-of-the-knight-episode-1
+
 public static void Main(string[] args)
 {
     var (searchArea, player) = ReadInitialInputs();
