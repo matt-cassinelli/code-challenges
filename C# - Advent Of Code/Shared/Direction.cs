@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode.Year2024.Day06;
+﻿namespace AdventOfCode.Shared;
 
 public enum Direction
 {

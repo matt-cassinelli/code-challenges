@@ -30,57 +30,68 @@ public class Solution
         CountVisitedPoints(map).Should().Be(5461);
     }
 
-    public static int CountVisitedPoints(string mapString)
+    [Theory]
+    [InlineData("""
+    .##..
+    ....#
+    .....
+    .^.#.
+    .....
+    """, 1)]
+    [InlineData("""
+    .#....
+    .....#
+    #..#..
+    ..#...
+    .^...#
+    ....#.
+    """, 3)]
+    [InlineData("""
+    ....#.....
+    .........#
+    ..........
+    ..#.......
+    .......#..
+    ..........
+    .#..^.....
+    ........#.
+    #.........
+    ......#...
+    """, 6)]
+    public void Part2TDD(string map, int expected)
     {
-        var (player, map) = ExtractInput(mapString);
-        var visitedPoints = new HashSet<Point>();
-
-        bool PlayerIsLookingAtObstacle() => map[player.LookingAt()] == '#';
-        bool PlayerIsLookingAtMapEdge() => !map.ContainsKey(player.LookingAt());
-
-        while (true)
-        {
-            if (!visitedPoints.Contains(player.Position))
-                visitedPoints.Add(player.Position);
-
-            if (PlayerIsLookingAtMapEdge())
-                break;
-
-            if (PlayerIsLookingAtObstacle())
-                player.Rotate90();
-
-            player.MoveOneStep();
-        }
-
-        return visitedPoints.Count;
+        CountPossibleLoops(map).Should().Be(expected);
     }
 
-    public static (Player, Dictionary<Point, char>) ExtractInput(string str)
+    [Fact]
+    public void Part2Full()
     {
-        var array = str
-            .SplitByNewline()
-            .Select(line => line.ToArray())
-            .ToArray();
+        var map = File.ReadAllText("Year2024\\Day06\\input.txt");
+        CountPossibleLoops(map).Should().Be(1836);
+    }
 
-        Player? player = null;
+    private static int CountVisitedPoints(string mapString)
+    {
+        var map = mapString.To2DCharDictionary();
+        var result = Simulation.FromMap(map).Run();
+        return result.VisitedPoints;
+    }
 
-        var map = new Dictionary<Point, char>();
+    private static int CountPossibleLoops(string mapString)
+    {
+        var map = mapString.To2DCharDictionary();
+        var keysOfEmptySpaces = map.Where(x => x.Value == '.').Select(x => x.Key);
+        var loops = 0;
 
-        for (int y = 0; y < array.Length; y++)
+        foreach (var key in keysOfEmptySpaces)
         {
-            for (int x = 0; x < array[0].Length; x++)
-            {
-                map.Add(new(x, y), array[y][x]);
+            var modifiedMap = new Dictionary<Point, char>(map);
+            modifiedMap[key] = '#';
 
-                if (array[y][x] == '^')
-                    player = new Player(x, y);
-            }
+            if (Simulation.FromMap(modifiedMap).Run().IsLoop)
+                loops++;
         }
 
-        if (player == null)
-            throw new ArgumentException("Player is missing from input.");
-
-        return (player, map);
+        return loops;
     }
 }
-

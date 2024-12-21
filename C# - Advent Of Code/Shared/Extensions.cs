@@ -6,7 +6,7 @@ public static class Extensions
 {
     public static int ToInt32(this string input)
     {
-        return Int32.Parse(
+        return int.Parse(
             input,
             NumberStyles.Integer,
             CultureInfo.InvariantCulture.NumberFormat);
@@ -35,5 +35,25 @@ public static class Extensions
         }
 
         return matrix;
+    }
+
+    public static Dictionary<Point, char> To2DCharDictionary(this string input)
+    {
+        var array = input
+            .SplitByNewline()
+            .Select(line => line.ToArray())
+            .ToArray();
+
+        Dictionary<Point, char> map = [];
+
+        for (int y = 0; y < array.Length; y++)
+        {
+            for (int x = 0; x < array[0].Length; x++)
+            {
+                map.Add(new(x, y), array[y][x]);
+            }
+        }
+
+        return map;
     }
 }

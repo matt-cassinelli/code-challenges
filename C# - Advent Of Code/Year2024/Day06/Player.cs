@@ -1,10 +1,19 @@
-﻿namespace AdventOfCode.Year2024.Day06;
+﻿using AdventOfCode.Shared;
+
+namespace AdventOfCode.Year2024.Day06;
 
 public class Player
 {
     public Player(int x, int y)
     {
         Position = new Point(x, y);
+        Direction = Direction.Up;
+    }
+
+    public Player(Dictionary<Point, char> map)
+    {
+        var test = map.FirstOrDefault(x => x.Value == '^');
+        Position = test.Key;
         Direction = Direction.Up;
     }
 
