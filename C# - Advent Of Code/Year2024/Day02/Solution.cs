@@ -57,7 +57,7 @@ public class Solution
             
         for (int i = 1; i < report.Count; i++)
         {
-            var difference = Utils.FindDifference(report[i], report[i - 1]);
+            var difference = Functions.FindDifference(report[i], report[i - 1]);
 
             if (difference < 1 || difference > 3)
                 return false;

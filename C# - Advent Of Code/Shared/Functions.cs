@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode.Shared;
 
-public class Utils
+public static class Functions
 {
     public static int FindDifference(int num1, int num2)
     {

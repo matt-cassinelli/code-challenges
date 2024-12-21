@@ -44,11 +44,7 @@ public class Part1
     private int CountWordOccurence(string input)
     {
         const int wordLength = 4;
-
-        var matrix = input
-            .SplitByNewline()
-            .ToCharMatrix();
-
+        var matrix = input.ToCharMatrix();
         var height = matrix.GetLength(0);
         var width = matrix.GetLength(1);
 

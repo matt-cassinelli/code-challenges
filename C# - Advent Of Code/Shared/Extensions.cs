@@ -18,8 +18,9 @@ public static class Extensions
         return input.Split(delimeters, StringSplitOptions.RemoveEmptyEntries);
     }
 
-    public static char[,] ToCharMatrix(this IList<string> lines)
+    public static char[,] ToCharMatrix(this string input)
     {
+        var lines = input.SplitByNewline();
         var height = lines.Count;
         int width = lines[0].Length;
 

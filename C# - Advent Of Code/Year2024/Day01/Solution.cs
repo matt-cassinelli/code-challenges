@@ -14,7 +14,7 @@ public class Solution
         var difference = 0;
         for (int i = 0; i < leftList.Count; i++)
         {
-            difference += Utils.FindDifference(leftList[i], rightList[i]);
+            difference += Functions.FindDifference(leftList[i], rightList[i]);
         }
 
         difference.Should().Be(1506483);
